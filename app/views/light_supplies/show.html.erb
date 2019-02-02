@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @light_supply.provider %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @light_supply.house.address %>
+</p>
+
+<%= link_to 'Edit', edit_light_supply_path(@light_supply) %> |
+<%= link_to 'Back', house_path(@light_supply.house) %>

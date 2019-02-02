@@ -1,0 +1,27 @@
+<%= form_with(model: water_supply, local: true) do |form| %>
+  <% if water_supply.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(water_supply.errors.count, "error") %> prohibited this water_supply from being saved:</h2>
+
+      <ul>
+      <% water_supply.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :provider %>
+    <%= form.text_field :provider %>
+  </div>
+
+  <div class="field">
+    <%= form.label :house_id %>
+    <%= form.collection_select(:house_id, House.all, :id, :address) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

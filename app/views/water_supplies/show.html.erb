@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @water_supply.provider %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @water_supply.house.address %>
+</p>
+
+<%= link_to 'Edit', edit_water_supply_path(@water_supply) %> |
+<%= link_to 'Back', house_path(@water_supply.house) %>

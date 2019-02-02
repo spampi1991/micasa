@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gas Supplies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>House</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gas_supplies.each do |gas_supply| %>
+      <tr>
+        <td><%= gas_supply.provider %></td>
+        <td><%= gas_supply.house.address %></td>
+        <td><%= link_to 'Show', gas_supply %></td>
+        <td><%= link_to 'Edit', edit_gas_supply_path(gas_supply) %></td>
+        <td><%= link_to 'Destroy', gas_supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gas Supply', new_gas_supply_path %> <br>
+<%= link_to 'Houses', houses_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @house.address %>
+</p>
+
+<p>
+  <% if @house.gas_supply.nil? %>
+    <%= link_to 'Add Gas Supplier', new_gas_supply_path %>
+  <% else %>
+    <%= link_to 'Gas Supplier', gas_supply_path(@house.gas_supply) %>
+  <% end %>
+</p>
+
+<p>
+  <% if @house.water_supply.nil? %>
+    <%= link_to 'Add Water Supplier', new_water_supply_path %>
+  <% else %>
+    <%= link_to 'Water Supplier', water_supply_path(@house.water_supply) %>
+  <% end %>
+</p>
+
+<p>
+  <% if @house.light_supply.nil? %>
+    <%= link_to 'Add Light Supplier', new_light_supply_path %>
+  <% else %>
+    <%= link_to 'Light Supplier', light_supply_path(@house.light_supply) %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_house_path(@house) %> |
+<%= link_to 'Back', houses_path %>

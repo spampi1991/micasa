@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @gas_supply.provider %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @gas_supply.house.address %>
+</p>
+
+<p>
+  <% if @gas_supply.invoices.any? %>
+    <%= link_to 'Invoices', gas_supply_invoices_path(@gas_supply) %>
+  <% else %>
+    <%= link_to 'Add invoice', new_gas_supply_invoice_path(@gas_supply) %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_gas_supply_path(@gas_supply) %> |
+<%= link_to 'Back', house_path(@gas_supply.house) %>
